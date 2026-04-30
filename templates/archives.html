@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}档案 - Hero's Log{% endblock %}
+
+{% block content %}
+<!-- Page Banner -->
+<div class="page-banner">
+    <div class="hex-decoration left"></div>
+    <div class="hex-decoration right"></div>
+    <div class="banner-content">
+        <h1>文章档案</h1>
+        <div class="accent-line"></div>
+        <p class="banner-subtitle">All Articles Timeline</p>
+    </div>
+</div>
+
+<!-- Archives Content -->
+<section class="container">
+    {% if archives %}
+        {% for year, posts in archives.items() %}
+        <div class="archive-year fade-in">
+            <div class="archive-year-header">
+                <span class="archive-year-number">{{ year }}</span>
+                <span class="archive-year-line"></span>
+                <span style="color: var(--text-muted); font-size: 14px;">{{ posts|length }} 篇文章</span>
+            </div>
+            <div class="archive-posts">
+                {% for post in posts %}
+                <a href="{{ url_for('post_detail', slug=post.slug) }}" class="archive-post-item">
+                    <span class="date">{{ post.date[5:] }}</span>
+                    <span class="title">{{ post.title }}</span>
+                    <span class="category-tag">{{ post.category }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+    <div class="empty-state">
+        <i class="fas fa-archive"></i>
+        <h3>暂无档案</h3>
+        <p>快去 posts 文件夹添加第一篇文章吧！</p>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

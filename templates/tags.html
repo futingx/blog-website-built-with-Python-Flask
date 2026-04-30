@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}标签 - Hero's Log{% endblock %}
+
+{% block content %}
+<!-- Page Banner -->
+<div class="page-banner">
+    <div class="hex-decoration left"></div>
+    <div class="hex-decoration right"></div>
+    <div class="banner-content">
+        <h1>标签云</h1>
+        <div class="accent-line"></div>
+        <p class="banner-subtitle">Tag Cloud</p>
+    </div>
+</div>
+
+<!-- Tags Content -->
+<section class="container">
+    {% if tags %}
+    <div class="tags-cloud">
+        {% for tag, posts in tags.items() %}
+        <a href="{{ url_for('tag_detail', name=tag) }}" class="tag-cloud-item fade-in">
+            <span class="tag-name">{{ tag }}</span>
+            <span class="tag-count">{{ posts|length }}</span>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <i class="fas fa-tags"></i>
+        <h3>暂无标签</h3>
+        <p>快去 posts 文件夹添加文章并设置标签吧！</p>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

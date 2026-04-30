@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}关于我 - Hero's Log{% endblock %}
+
+{% block content %}
+<!-- Page Banner -->
+<div class="page-banner">
+    <div class="hex-decoration left"></div>
+    <div class="hex-decoration right"></div>
+    <div class="banner-content">
+        <h1>个人简历</h1>
+        <div class="accent-line"></div>
+        <p class="banner-subtitle">About Me</p>
+    </div>
+</div>
+
+<!-- About Content -->
+<section class="container">
+    <div class="about-profile fade-in">
+        <div class="about-avatar">
+            <div class="about-avatar-frame">
+                <div class="avatar-inner">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+            </div>
+            <h3 class="about-avatar-name">Hero</h3>
+            <p class="about-avatar-title">全栈开发工程师</p>
+        </div>
+        <div class="about-info">
+            <h2>关于我</h2>
+            <p>
+                你好！我是 Hero，一名热爱技术的全栈开发工程师。
+                专注于 Python、Flask、Web 开发等领域，喜欢探索新技术，分享编程经验。
+            </p>
+            <p>
+                在这个博客中，我会分享技术教程、项目经验、工具推荐等内容。
+                如果你有任何问题或建议，欢迎与我交流！
+            </p>
+
+            <div class="skills-section">
+                <h3>技术栈</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Python / Flask</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML / CSS / JS</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Linux / Nginx</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">MySQL / PostgreSQL</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Docker / CI/CD</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Git / GitHub</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="container-narrow">
+        <div class="section-divider">
+            <span class="line"></span>
+            <i class="fas fa-road icon"></i>
+            <span class="line right"></span>
+        </div>
+        <h2 class="section-title">经历</h2>
+
+        <div class="timeline fade-in">
+            <div class="timeline-item">
+                <div class="year">2024 - 至今</div>
+                <h4>全栈开发工程师</h4>
+                <p>负责公司核心产品的设计与开发，使用 Flask、Django 构建后端服务，前端使用 Vue.js、React 等框架。主导了多个大型项目的架构设计与优化。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2022 - 2024</div>
+                <h4>Python 开发工程师</h4>
+                <p>专注于 Python Web 开发，参与多个电商、数据分析平台的建设。积累了丰富的 RESTful API 设计、数据库优化经验。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2020 - 2022</div>
+                <h4>Web 开发工程师</h4>
+                <p>初入职场，主要负责前端页面开发与后端接口实现。掌握了 HTML、CSS、JavaScript、Node.js 等技术栈。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2016 - 2020</div>
+                <h4>计算机科学与技术 · 本科</h4>
+                <p>就读于 XX 大学计算机科学与技术专业，在校期间参与多个编程竞赛，获得 ACM 区域赛铜奖。</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

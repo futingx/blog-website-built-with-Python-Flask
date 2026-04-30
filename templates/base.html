@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Hero's Log - 个人博客{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="main-header">
+        <div class="header-logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">HERO'S LOG</span>
+        </div>
+        <nav class="main-nav">
+            <a href="{{ url_for('index') }}" class="nav-link {% if request.endpoint == 'index' %}active{% endif %}">
+                <i class="fas fa-shield-alt"></i> 主页
+            </a>
+            <a href="{{ url_for('archives') }}" class="nav-link {% if request.endpoint == 'archives' %}active{% endif %}">
+                <i class="fas fa-archive"></i> 档案
+            </a>
+            <a href="{{ url_for('categories') }}" class="nav-link {% if 'category' in request.endpoint %}active{% endif %}">
+                <i class="fas fa-layer-group"></i> 分类
+            </a>
+            <a href="{{ url_for('tags') }}" class="nav-link {% if 'tag' in request.endpoint %}active{% endif %}">
+                <i class="fas fa-tags"></i> 标签
+            </a>
+            <a href="{{ url_for('about') }}" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">
+                <i class="fas fa-user-astronaut"></i> 简历
+            </a>
+        </nav>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="{{ url_for('index') }}"><i class="fas fa-shield-alt"></i> 主页</a>
+        <a href="{{ url_for('archives') }}"><i class="fas fa-archive"></i> 档案</a>
+        <a href="{{ url_for('categories') }}"><i class="fas fa-layer-group"></i> 分类</a>
+        <a href="{{ url_for('tags') }}"><i class="fas fa-tags"></i> 标签</a>
+        <a href="{{ url_for('about') }}"><i class="fas fa-user-astronaut"></i> 简历</a>
+    </div>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>HERO'S LOG</span>
+                <small>Powered by Flask & Markdown</small>
+            </div>
+            <div class="footer-links">
+                <a href="{{ url_for('index') }}">主页</a>
+                <a href="{{ url_for('archives') }}">档案</a>
+                <a href="{{ url_for('categories') }}">分类</a>
+                <a href="{{ url_for('tags') }}">标签</a>
+                <a href="{{ url_for('about') }}">简历</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hero's Log. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
